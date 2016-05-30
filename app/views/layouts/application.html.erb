@@ -7,16 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+
+  <% if logged_in? %>
+  <ul>
+    <li>Logged in as <%= current_admin.id %></li>
+    <li>Sign out</li>
+  </ul>
+  <% else %>
+  <% link_to '/session/new' %>
+  <% end %>
+
   <ul>
     <li><%= link_to "Home", root_path %></li>
     <li><%= link_to "About", about_path %></li>
     <li><%= link_to "Work", work_path %></li>
     <li><%= link_to "Journal", posts_path %></li>
-    <br>
-</ul>
+  </ul>
 
 
 <%= yield %>
+
 
 </body>
 </html>
