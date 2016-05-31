@@ -1,27 +1,15 @@
-@media (min-width: 320px) and (max-width: 568px) {
-  #menu ul {
-    display: none;
-  }
-}
-
-@media (min-width: 568px) {
-  #menu select {
-    display: none;
-  }
-}
-
 #menu {
-	height: 60px;
+	height: 13%;
 	padding: 0 5px 0;
 	text-align: center;
-  background-color: rgba(38, 17, 17, 0.19);
+  background-color: $transparent;
   font-family: $robotoMono;
 }
 
 #menu ul {
 	list-style: none;
-  font-size: 0.9em;
   margin: 0;
+  padding-top: 1%;
 }
 
 #menu ul li {
@@ -38,16 +26,24 @@
 	text-decoration: none;
 }
 
-#menu ul li.selected {
-	background: #fff;
-}
-
 #menu ul li.selected a {
-	color: #384047;
+	color: $highlight;
 }
 
 select {
 	width: 94%;
 	margin: 11px  0 11px 2%;
 	float: left;
+}
+
+@media (min-width: 320px) and (max-width: 568px) {
+  #menu ul {
+    display: none;
+  }
+}
+
+@media (min-width: 568px) {
+  #menu select {
+    display: none;
+  }
 }

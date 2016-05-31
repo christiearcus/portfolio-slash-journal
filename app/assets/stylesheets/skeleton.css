@@ -130,7 +130,17 @@ body {
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  text-align: center;
+  margin-top: 0.5em;
+  font-weight: 300;
+  font-size: 4.0rem;
+  line-height: 1.2;
+  letter-spacing: -.1rem;
+  font-family: $robotoMono;
+}
+
+h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 300; }
@@ -158,9 +168,9 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: $highlight; }
 a:hover {
-  color: #0FA0CE; }
+  color: $selected; }
 
 
 /* Buttons
@@ -206,8 +216,8 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #FFF;
-  background-color: #33C3F0;
-  border-color: #33C3F0; }
+  background-color: $highlight;
+  border-color: $highlight; }
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
@@ -266,7 +276,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #33C3F0;
+  border: 1px solid $highlight;
   outline: 0; }
 label,
 legend {
@@ -307,7 +317,7 @@ li {
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 code {
-  background-color: #f9f9f9;
+  background-color: $light;
   display: block;
   padding: 2em;
   border-radius: 1em;
@@ -353,14 +363,14 @@ form {
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
+  background: $light;
+  border-left: 10px solid $highlight;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
 blockquote:before {
-  color: #ccc;
+  color: $highlight;
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
