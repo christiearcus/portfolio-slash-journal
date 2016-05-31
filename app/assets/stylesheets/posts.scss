@@ -8,5 +8,17 @@ textarea {
 
 img {
   max-width: 30%;
-  border-radius: 2em;
+  border-radius: .2em;
+}
+
+.post-wrapper {
+  background: white;
+  padding: 1em;
+  margin-top: 1em;
+}
+
+.time {
+  text-align: center;
+  font-family: $robotoMono;
+  color: $highlight;
 }

@@ -1,7 +1,20 @@
-<div class="container">
+<div class="container post-wrapper">
   <h1><%= @post.title %></h1>
+  <p class="time"><%= @post.created_at.strftime("%B %d, %Y") %></p>
   <%= markdown(@post.body) %>
   <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %> |
   <%= link_to "Edit", edit_post_path(@post), method: :get%> |
   <%= link_to "Back to journal entries", controller: 'posts', action: "index" %>
+</div>
+
+<div class="container">
+  <form class="" action="index.html" method="post">
+    <label for="">Name</label>
+    <input type="text" name="name" value="">
+    <label for="">Email</label>
+    <input type="text" name="name" value="">
+    <label for="">Comment</label>
+    <textarea></textarea><br>
+    <button type="button" name="button">Submit</button>
+  </form>
 </div>

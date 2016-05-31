@@ -1,5 +1,8 @@
 html, body {
-  background: image-url('background.png') center center fixed;
+  background:     linear-gradient(
+      rgba(247, 235, 236, 0.3),
+      rgba(247, 235, 236, 0.3)
+    ),image-url('background.png') center center fixed;
   height: 100vh;
   margin: auto;
   position: relative;
