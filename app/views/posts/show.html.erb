@@ -7,14 +7,7 @@
   <%= link_to "Back to journal entries", controller: 'posts', action: "index" %>
 </div>
 
-<div class="container">
-  <form class="" action="index.html" method="post">
-    <label for="">Name</label>
-    <input type="text" name="name" value="">
-    <label for="">Email</label>
-    <input type="text" name="name" value="">
-    <label for="">Comment</label>
-    <textarea></textarea><br>
-    <button type="button" name="button">Submit</button>
-  </form>
-</div>
+<h1>Comments</h1>
+<%= render @post.comments %>
+<h1>Leave a comment</h1>
+<%= render "/comments/comments_form" %>
