@@ -26,9 +26,11 @@
 	}
 	ul li a:hover {
 		color: $highlight;
+		text-decoration: underline;
 	}
 	ul li.selected a {
 		color: $highlight;
+		text-decoration: underline;
 	}
 
 }

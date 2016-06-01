@@ -1,0 +1,45 @@
+.work-squares {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60.8% !important;
+  margin-top: 2em;
+}
+.flip-container {
+	perspective: 1000px;
+  margin: auto;
+  float: left;
+}
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+.flip-container, .front, .back {
+	width: 25em;
+	height: 25em;
+  margin-bottom: 1px;
+}
+.back {
+  background-color: $highlight;
+}
+.front {
+  background-color: $solidBackground;
+}
+.flipper {
+	transition: 0.9s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
