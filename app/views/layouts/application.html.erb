@@ -23,16 +23,70 @@
   </div>
   <% end %>
 
-  <div id="menu">
+  <div id="largeNav">
     <ul>
-      <li><%= link_to "Home", root_path %></li>
+      <% if request.path == '/' %>
+        <li><%= link_to "Home", root_path, class: "selected" %></li>
+      <% else %>
+        <li><%= link_to "Home", root_path %></li>
+      <% end %>
+
+      <% if request.path == '/about' %>
+        <li><%= link_to "About", about_path, class: "selected" %></li>
+      <% else  %>
       <li><%= link_to "About", about_path %></li>
+      <% end %>
+
+      <% if request.path == '/work' %>
+        <li><%= link_to "Work", work_path, class: "selected" %></li>
+      <% else  %>
       <li><%= link_to "Work", work_path %></li>
-      <li><%= link_to "Journal", posts_path %></li>
+      <% end %>
+
+      <% if request.path =~ /posts(.*)/ %>
+        <li><%= link_to "Journal", posts_path, class: "selected" %></li>
+      <% else %>
+        <li><%= link_to "Journal", posts_path %></li>
+      <% end %>
     </ul>
   </div>
 
-<%= yield %>
+  <div id="smallNav">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul id="hamburger">
+      <% if request.path == '/' %>
+        <li><%= link_to "Home", root_path, class: "selected" %></li>
+      <% else %>
+        <li><%= link_to "Home", root_path %></li>
+      <% end %>
+
+      <% if request.path == '/about' %>
+        <li><%= link_to "About", about_path, class: "selected" %></li>
+      <% else  %>
+      <li><%= link_to "About", about_path %></li>
+      <% end %>
+
+      <% if request.path == '/work' %>
+        <li><%= link_to "Work", work_path, class: "selected" %></li>
+      <% else  %>
+      <li><%= link_to "Work", work_path %></li>
+      <% end %>
+
+      <% if request.path =~ /posts(.*)/ %>
+        <li><%= link_to "Journal", posts_path, class: "selected" %></li>
+      <% else %>
+        <li><%= link_to "Journal", posts_path %></li>
+      <% end %>
+    </ul>
+  </div>
+
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

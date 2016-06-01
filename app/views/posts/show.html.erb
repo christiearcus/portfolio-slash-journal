@@ -1,4 +1,4 @@
-<div class="container">
+<div class="row">
   <%= link_to "Back to journal entries", controller: 'posts', action: "index" %>
   <div class="post-wrapper">
     <h1><%= @post.title %></h1>
@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="row">
   <h3>Comments</h3>
   <%= render @post.comments %>
   <h3>Leave a comment</h3>

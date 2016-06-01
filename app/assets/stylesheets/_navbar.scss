@@ -1,12 +1,26 @@
-#menu {
+@media (max-width: 568px) {
+  #largeNav {
+    display: none;
+  }
+	#smallNav {
+		display: block;
+	}
+}
+
+@media (min-width: 568px) {
+  #smallNav {
+    display: none;
+  }
+}
+
+#largeNav {
 	min-height: 95px;
 	padding: 0 5px 0;
 	text-align: center;
-  // background-color: $transparent;
   font-family: $robotoMono;
 }
 
-#menu {
+#largeNav {
 	ul {
 		list-style: none;
 		margin: 0;
@@ -28,30 +42,11 @@
 		color: $highlight;
 		text-decoration: underline;
 	}
-	ul li.selected a {
+	a.selected {
 		color: $highlight;
 		text-decoration: underline;
 	}
-
 }
-
-// #menu ul li {
-// 	display: inline-block;
-// 	width: 4em;
-// 	text-align: center;
-// }
-
-// #menu ul li a {
-// 	color: black;
-// 	width: 100%;
-// 	line-height: 60px;
-//   text-transform: uppercase;
-// 	text-decoration: none;
-// }
-//
-// #menu ul li.selected a {
-// 	color: $highlight;
-// }
 
 select {
 	width: 94%;
@@ -59,17 +54,100 @@ select {
 	float: left;
 }
 
-@media (min-width: 320px) and (max-width: 568px) {
-  #menu ul {
-    display: none;
-  }
-	#menu select {
-		margin-top: 6%;
+// small nav
+
+#smallNav {
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#smallNav {
+	a {
+	transition: color 0.3s ease;
+	font-family: $robotoMono;
+	}
+	a:hover {
+	color: $selected;
+	}
+	input {
+	  display: block;
+	  width: 40px;
+	  height: 32px;
+	  position: absolute;
+	  top: -7px;
+	  left: -5px;
+	  opacity: 0; /* hide this */
+	  z-index: 2; /* and place it over the hamburger */
+	  -webkit-touch-callout: none;
+	}
+	span {
+	  display: block;
+	  width: 33px;
+	  height: 4px;
+	  margin-bottom: 5px;
+	  position: relative;
+	  background: $darkGrey;
+	  border-radius: 3px;
+	  z-index: 1;
+	  transform-origin: 4px 0px;
+	  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+	              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+	              opacity 0.55s ease;
+	}
+	span:first-child {
+	  transform-origin: 0% 0%;
+	}
+	span:nth-last-child(2) {
+	  transform-origin: 0% 100%;
+	}
+	span:nth-last-child(2) {
+	  transform-origin: 0% 100%;
+	}
+	// make hamburger in to cross
+	input:checked ~ span {
+	  opacity: 1;
+	  transform: rotate(45deg) translate(-2px, -1px);
+	  background: $darkGrey;
+	}
+	// hide middle hamburger slice
+	input:checked ~ span:nth-last-child(3) {
+	  opacity: 0;
+	  transform: rotate(0deg) scale(0.2, 0.2);
+	}
+	input:checked ~ span:nth-last-child(2) {
+	  opacity: 1;
+	  transform: rotate(-45deg) translate(0, -1px);
+	}
+	input:checked ~ ul
+	{
+	  transform: scale(1.0, 1.0);
+	  opacity: 1;
 	}
 }
 
-@media (min-width: 568px) {
-  #menu select {
-    display: none;
-  }
+#hamburger {
+  position: absolute;
+  width: 100%;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: $solidBackground;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+	li {
+	  padding: 10px 0;
+	  font-size: 22px;
+	}
+	input:checked ~ ul {
+	  transform: scale(1.0, 1.0);
+	  opacity: 1;
+	}
 }
