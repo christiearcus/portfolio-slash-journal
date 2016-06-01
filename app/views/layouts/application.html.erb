@@ -12,9 +12,16 @@
       <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
 
+  <% if logged_in? %>
   <div class="session">
-    <p>Logged in as: <%= current_admin %></p>
+    <p>Logged in as: <%= current_admin.username %></p>
+    <form class="" action="/sessions/<%= current_admin.id %>" method="post">
+      <input type="hidden" value="delete" name="_method">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <button>Log out</button>
+    </form>
   </div>
+  <% end %>
 
   <div id="menu">
     <ul>
@@ -26,7 +33,6 @@
   </div>
 
 <%= yield %>
-
 
 </body>
 </html>

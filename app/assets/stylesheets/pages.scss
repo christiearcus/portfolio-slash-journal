@@ -1,7 +1,7 @@
 html, body {
   background:     linear-gradient(
-      rgba(247, 235, 236, 0.3),
-      rgba(247, 235, 236, 0.3)
+      $background,
+      $background
     ),image-url('background.png') center center fixed;
   height: 100vh;
   margin: auto;

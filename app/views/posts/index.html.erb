@@ -3,5 +3,7 @@
   <% @posts.each do |post| %>
     <h2><%= link_to post.title, post %></h2>
   <% end %>
+  <% if logged_in? %>
   <%= link_to "New", new_post_path %>
+  <% end %>
 </div>
