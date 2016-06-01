@@ -1,7 +1,9 @@
-<%= form_tag sessions_path do %>
-<%= label_tag :username %><br>
-<%= text_field_tag(:username)%><br>
-<%= label_tag :password %><br>
-<%= text_field_tag(:password)%><br>
-<%= submit_tag("Sign in") %>
-<% end %>
+<div class="container">
+  <%= form_tag sessions_path do %>
+  <%= label_tag :username %><br>
+  <%= text_field_tag(:username)%><br>
+  <%= label_tag :password %><br>
+  <%= text_field_tag(:password)%><br>
+  <%= submit_tag("Sign in") %>
+  <% end %>
+</div>

@@ -12,14 +12,9 @@
       <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
 
-  <% if logged_in? %>
-  <ul>
-    <li>Logged in as <%= current_admin.id %></li>
-    <li>Sign out</li>
-  </ul>
-  <% else %>
-  <% link_to '/session/new' %>
-  <% end %>
+  <div class="session">
+    <p>Logged in as: <%= current_admin %></p>
+  </div>
 
   <div id="menu">
     <ul>

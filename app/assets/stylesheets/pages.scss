@@ -19,8 +19,13 @@ html, body {
   color: $darkGrey;
 }
 
-.hero-layout > h1 {
-  text-align: right;
+.hero-layout {
+  h1 {
+    text-align: right;
+  }
+  p {
+    text-align: right;
+  }
 }
 
 // title animation

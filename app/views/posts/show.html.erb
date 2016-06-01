@@ -1,13 +1,17 @@
-<div class="container post-wrapper">
-  <h1><%= @post.title %></h1>
-  <p class="time"><%= @post.created_at.strftime("%B %d, %Y") %></p>
-  <%= markdown(@post.body) %>
-  <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %> |
-  <%= link_to "Edit", edit_post_path(@post), method: :get%> |
+<div class="container">
   <%= link_to "Back to journal entries", controller: 'posts', action: "index" %>
+  <div class="post-wrapper">
+    <h1><%= @post.title %></h1>
+    <p class="time"><%= @post.created_at.strftime("%B %d, %Y") %></p>
+    <%= markdown(@post.body) %>
+    <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %> |
+    <%= link_to "Edit", edit_post_path(@post), method: :get%>
+  </div>
 </div>
 
-<h1>Comments</h1>
-<%= render @post.comments %>
-<h1>Leave a comment</h1>
-<%= render "/comments/comments_form" %>
+<div class="container">
+  <h3>Comments</h3>
+  <%= render @post.comments %>
+  <h3>Leave a comment</h3>
+  <%= render "/comments/comments_form" %>
+</div>

@@ -1,4 +1,4 @@
-<div class="container post-wrapper">
+<div class="post-wrapper">
   <p>
     Name: <%= comment.name %>
   </p>
@@ -8,6 +8,5 @@
   <p>
     Submitted <%= time_ago_in_words(comment.created_at) %> ago.
   </p>
-  <p><%= link_to 'Delete', [comment.post, comment], method: :delete,
-  data: { confirm: 'Are you sure?' } %></p>
+  <p><%= link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %></p>
 </div>

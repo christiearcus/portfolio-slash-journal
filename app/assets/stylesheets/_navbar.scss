@@ -2,33 +2,54 @@
 	min-height: 95px;
 	padding: 0 5px 0;
 	text-align: center;
-  background-color: $transparent;
+  // background-color: $transparent;
   font-family: $robotoMono;
 }
 
-#menu ul {
-	list-style: none;
-  margin: 0;
-  padding-top: 1.5%;
+#menu {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-top: 1.5%;
+	}
+	ul li {
+		display: inline-block;
+		width: 4em;
+		text-align: center;
+	}
+	ul li a {
+		color: black;
+		width: 100%;
+		line-height: 60px;
+	  text-transform: uppercase;
+		text-decoration: none;
+	}
+	ul li a:hover {
+		color: $highlight;
+	}
+	ul li.selected a {
+		color: $highlight;
+	}
+
 }
 
-#menu ul li {
-	display: inline-block;
-	width: 4em;
-	text-align: center;
-}
+// #menu ul li {
+// 	display: inline-block;
+// 	width: 4em;
+// 	text-align: center;
+// }
 
-#menu ul li a {
-	color: black;
-	width: 100%;
-	line-height: 60px;
-  text-transform: uppercase;
-	text-decoration: none;
-}
-
-#menu ul li.selected a {
-	color: $highlight;
-}
+// #menu ul li a {
+// 	color: black;
+// 	width: 100%;
+// 	line-height: 60px;
+//   text-transform: uppercase;
+// 	text-decoration: none;
+// }
+//
+// #menu ul li.selected a {
+// 	color: $highlight;
+// }
 
 select {
 	width: 94%;
