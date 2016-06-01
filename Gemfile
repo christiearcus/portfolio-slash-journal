@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'redcarpet', '~> 3.3', '>= 3.3.4'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+gem 'rails_real_favicon', '~> 0.0.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
