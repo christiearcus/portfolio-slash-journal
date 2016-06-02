@@ -319,7 +319,7 @@ li {
 code {
   background-color: $light;
   display: block;
-  padding: 2em;
+  padding: 1em;
   border-radius: .2em;
 }
 
