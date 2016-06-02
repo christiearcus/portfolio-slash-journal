@@ -26,6 +26,8 @@ gem 'redcarpet', '~> 3.3', '>= 3.3.4'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'rails_real_favicon', '~> 0.0.3'
 gem 'rails_12factor'
+gem 'font-awesome-sass'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
