@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container pages-wrapper">
   <div class="row">
-    <%= link_to "Back to journal entries", controller: 'posts', action: "index" %>
     <div class="post-wrapper">
+      <%= link_to "Back to journal entries", controller: 'posts', action: "index" %>
       <h1><%= @post.title %></h1>
       <p class="time"><%= @post.created_at.strftime("%B %d, %Y") %></p>
       <%= markdown(@post.body) %>
