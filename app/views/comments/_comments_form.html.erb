@@ -1,17 +1,8 @@
-<%= form_for([@post, @post.comments.build]) do |f| %>
-    <p>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </p>
-    <p>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </p>
-    <p>
-      <%= f.label :body %>
-      <%= f.text_area :body %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
-  <% end %>
+<div class="comment">
+  <%= form_for([@post, @post.comments.build]) do |f| %>
+        <%= f.text_field :name , placeholder: 'Name'%>
+        <%= f.text_field :email, placeholder: "Email (won't be displayed online)" %>
+        <%= f.text_area :body, placeholder: "Your comment" %>
+        <%= f.submit %>
+    <% end %>
+</div>

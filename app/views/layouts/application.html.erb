@@ -6,23 +6,13 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
   <%= render 'favicon' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-  <% flash.each do |key, value| %>
+  <!-- <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %></div>
-  <% end %>
-
-  <% if logged_in? %>
-  <div class="session">
-    <p>Logged in as: <%= current_admin.username %></p>
-    <form class="" action="/sessions/<%= current_admin.id %>" method="post">
-      <input type="hidden" value="delete" name="_method">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <button>Log out</button>
-    </form>
-  </div>
-  <% end %>
+  <% end %> -->
 
   <div id="largeNav">
     <ul>
@@ -38,18 +28,22 @@
       <li><%= link_to "About", about_path %></li>
       <% end %>
 
-      <% if request.path == '/work' %>
-        <li><%= link_to "Work", work_path, class: "selected" %></li>
-      <% else  %>
-      <li><%= link_to "Work", work_path %></li>
-      <% end %>
-
       <% if request.path =~ /posts(.*)/ %>
         <li><%= link_to "Journal", posts_path, class: "selected" %></li>
       <% else %>
         <li><%= link_to "Journal", posts_path %></li>
       <% end %>
     </ul>
+    <% if logged_in? %>
+    <div class="session">
+      <p>Hi, <%= current_admin.username %></p>
+      <form class="" action="/sessions/<%= current_admin.id %>" method="post">
+        <input type="hidden" value="delete" name="_method">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <button>Log out</button>
+      </form>
+    </div>
+    <% end %>
   </div>
 
   <div id="smallNav">
@@ -70,24 +64,26 @@
       <li><%= link_to "About", about_path %></li>
       <% end %>
 
-      <% if request.path == '/work' %>
-        <li><%= link_to "Work", work_path, class: "selected" %></li>
-      <% else  %>
-      <li><%= link_to "Work", work_path %></li>
-      <% end %>
-
       <% if request.path =~ /posts(.*)/ %>
         <li><%= link_to "Journal", posts_path, class: "selected" %></li>
       <% else %>
         <li><%= link_to "Journal", posts_path %></li>
       <% end %>
+
+      <% if logged_in? %>
+        <li class="sessionSmall">Hi, <%= current_admin.username %></li>
+        <form class="" action="/sessions/<%= current_admin.id %>" method="post">
+          <input type="hidden" value="delete" name="_method">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <button class="sessionSmall sessionBtn">Log out</button>
+        </form>
+
+        <% end %>
     </ul>
   </div>
 
 
-<div class="container">
   <%= yield %>
-</div>
 
 </body>
 </html>

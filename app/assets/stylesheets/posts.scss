@@ -1,9 +1,10 @@
-input, textarea {
-  width: 70%;
-}
+  input, textarea {
+    width: 100%;
+  }
+
 
 textarea {
-  min-height: 400px;
+  height: 400px;
 }
 
 img {
@@ -12,13 +13,47 @@ img {
 }
 
 .post-wrapper {
-  background: white;
+  background: whitesmoke;
   padding: 1em;
   margin-top: 1em;
+  span {
+    color: $highlight;
+  }
 }
 
 .time {
   text-align: center;
   font-family: $robotoMono;
   color: $highlight;
+}
+
+.search {
+  input {
+    width: 100%;
+  }
+  textarea {
+    width: 50%;
+  }
+}
+
+.post-item {
+  h2 {
+    display: inline;
+  }
+  p {
+    color: grey;
+  }
+}
+
+.comment {
+  textarea {
+    max-height: 200px;
+  }
+}
+
+.comment-container {
+  h3 {
+    margin-top: 1em;
+    text-align: center;
+  }
 }

@@ -6,9 +6,9 @@ html, body {
   height: 100vh;
   margin: auto;
   position: relative;
-  // overflow: hidden;
 }
 
+// homepage layout
 .hero-layout {
   position: absolute;
   right: 10%;
@@ -17,9 +17,6 @@ html, body {
   animation-name: fadeInDown;
   animation-duration: 1s;
   color: $darkGrey;
-}
-
-.hero-layout {
   h1 {
     text-align: right;
   }
@@ -28,8 +25,7 @@ html, body {
   }
 }
 
-// title animation
-
+// homepage title animation
 @-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
@@ -61,4 +57,14 @@ html, body {
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
+}
+
+// other pages layout
+
+@media (max-width: 568px) {
+  .pages-wrapper {
+    h1 {
+      margin-top: 2.5em;
+    }
+  }
 }

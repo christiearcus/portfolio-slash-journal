@@ -1,12 +1,22 @@
+<div class="pages-wrapper container">
   <h1>Journal</h1>
-  <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-    <%= submit_tag "Search" %>
-  <% end %>
-  
+
   <% @posts.each do |post| %>
-    <h2><%= link_to post.title, post %></h2>
+    <div class="post-item">
+      <h2><%= link_to post.title, post %></h2>
+      <p><%= post.created_at.strftime("%B %d, %Y") %></p>
+    </div>
   <% end %>
+
+  <hr></hr>
+
+  <%= form_tag(posts_path, :method => "get", id: "search-form", class: "search") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+    <%= submit_tag "Go" %>
+  <% end %>
+
   <% if logged_in? %>
   <%= link_to "New", new_post_path %>
   <% end %>
+
+</div>

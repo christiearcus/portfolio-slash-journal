@@ -1,6 +1,8 @@
-<% if logged_in? %>
-  <h1>New journal entry</h1>
-  <%= render 'form' %>
-<% else %>
-  <%= link_to "Admin login", new_session_path %>
-<% end %>
+<div class="container">
+  <% if logged_in? %>
+    <h1>New journal entry</h1>
+    <%= render 'form' %>
+  <% else %>
+    <%= link_to "Admin login", new_session_path %>
+  <% end %>
+</div>

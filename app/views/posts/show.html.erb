@@ -1,20 +1,24 @@
-<div class="row">
-  <%= link_to "Back to journal entries", controller: 'posts', action: "index" %>
-  <div class="post-wrapper">
-    <h1><%= @post.title %></h1>
-    <p class="time"><%= @post.created_at.strftime("%B %d, %Y") %></p>
-    <%= markdown(@post.body) %>
+<div class="container">
+  <div class="row">
+    <%= link_to "Back to journal entries", controller: 'posts', action: "index" %>
+    <div class="post-wrapper">
+      <h1><%= @post.title %></h1>
+      <p class="time"><%= @post.created_at.strftime("%B %d, %Y") %></p>
+      <%= markdown(@post.body) %>
 
-    <% if logged_in? %>
-    <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %> |
-    <%= link_to "Edit", edit_post_path(@post), method: :get%>
-    <% end %>
+      <% if logged_in? %>
+      <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %> |
+      <%= link_to "Edit", edit_post_path(@post), method: :get%>
+      <% end %>
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <h3>Comments</h3>
-  <%= render @post.comments %>
-  <h3>Leave a comment</h3>
-  <%= render "/comments/comments_form" %>
+  <div class="row comment-container">
+    <% if @post.comments.count > 0 %>
+    <h3>Comments</h3>
+    <% end %>
+    <%= render @post.comments %>
+    <h3>Leave a comment</h3>
+    <%= render "/comments/comments_form" %>
+  </div>
 </div>
