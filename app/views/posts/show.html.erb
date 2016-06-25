@@ -12,12 +12,15 @@
     </div>
   </div>
 
-  <div class="row comment-container">
-    <% if @post.comments.count > 0 %>
-    <h3>Comments</h3>
-    <% end %>
-    <%= render @post.comments %>
-    <h3>Leave a comment</h3>
-    <%= render "/comments/comments_form" %>
-  </div>
-</div>
+     <div id="disqus_thread" class="comment-section"></div>
+        <script>
+            (function() {  // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = '//christiemetson.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    </div>
+<script id="dsq-count-scr" src="//christiemetson.disqus.com/count.js" async></script>
