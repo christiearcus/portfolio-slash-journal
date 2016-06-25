@@ -14,81 +14,81 @@
   <!-- <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %> -->
-  <div class="wrapper">
-      <div class="container">
-        <div id="largeNav">
-          <ul>
-            <% if request.path == '/' %>
-              <li><%= link_to "Home", root_path, class: "selected" %></li>
-            <% else %>
-              <li><%= link_to "Home", root_path %></li>
-            <% end %>
+  
+  <div class="container">
+    <div id="largeNav">
+      <ul>
+        <% if request.path == '/' %>
+          <li><%= link_to "Home", root_path, class: "selected" %></li>
+        <% else %>
+          <li><%= link_to "Home", root_path %></li>
+        <% end %>
 
-            <% if request.path == '/about' %>
-              <li><%= link_to "About", about_path, class: "selected" %></li>
-            <% else  %>
-            <li><%= link_to "About", about_path %></li>
-            <% end %>
+        <% if request.path == '/about' %>
+          <li><%= link_to "About", about_path, class: "selected" %></li>
+        <% else  %>
+        <li><%= link_to "About", about_path %></li>
+        <% end %>
 
-            <% if request.path =~ /posts(.*)/ %>
-              <li><%= link_to "Journal", posts_path, class: "selected" %></li>
-            <% else %>
-              <li><%= link_to "Journal", posts_path %></li>
-            <% end %>
-          </ul>
-          <% if logged_in? %>
-          <div class="session">
-            <p>Hi, <%= current_admin.username %></p>
-            <form class="" action="/sessions/<%= current_admin.id %>" method="post">
-              <input type="hidden" value="delete" name="_method">
-              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-              <button>Log out</button>
-            </form>
-          </div>
-          <% end %>
-        </div>
-
+        <% if request.path =~ /posts(.*)/ %>
+          <li><%= link_to "Journal", posts_path, class: "selected" %></li>
+        <% else %>
+          <li><%= link_to "Journal", posts_path %></li>
+        <% end %>
+      </ul>
+      <% if logged_in? %>
+      <div class="session">
+        <p>Hi, <%= current_admin.username %></p>
+        <form class="" action="/sessions/<%= current_admin.id %>" method="post">
+          <input type="hidden" value="delete" name="_method">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <button>Log out</button>
+        </form>
       </div>
-
-      <div id="smallNav">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul id="hamburger">
-          <% if request.path == '/' %>
-            <li><%= link_to "Home", root_path, class: "selected" %></li>
-          <% else %>
-            <li><%= link_to "Home", root_path %></li>
-          <% end %>
-
-          <% if request.path == '/about' %>
-            <li><%= link_to "About", about_path, class: "selected" %></li>
-          <% else  %>
-          <li><%= link_to "About", about_path %></li>
-          <% end %>
-
-          <% if request.path =~ /posts(.*)/ %>
-            <li><%= link_to "Journal", posts_path, class: "selected" %></li>
-          <% else %>
-            <li><%= link_to "Journal", posts_path %></li>
-          <% end %>
-
-          <% if logged_in? %>
-            <li class="sessionSmall">Hi, <%= current_admin.username %></li>
-            <form class="" action="/sessions/<%= current_admin.id %>" method="post">
-              <input type="hidden" value="delete" name="_method">
-              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-              <button class="sessionSmall sessionBtn">Log out</button>
-            </form>
-
-            <% end %>
-        </ul>
-      </div>
-
-
-      <%= yield %>
+      <% end %>
+    </div>
 
   </div>
+
+  <div id="smallNav">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul id="hamburger">
+      <% if request.path == '/' %>
+        <li><%= link_to "Home", root_path, class: "selected" %></li>
+      <% else %>
+        <li><%= link_to "Home", root_path %></li>
+      <% end %>
+
+      <% if request.path == '/about' %>
+        <li><%= link_to "About", about_path, class: "selected" %></li>
+      <% else  %>
+      <li><%= link_to "About", about_path %></li>
+      <% end %>
+
+      <% if request.path =~ /posts(.*)/ %>
+        <li><%= link_to "Journal", posts_path, class: "selected" %></li>
+      <% else %>
+        <li><%= link_to "Journal", posts_path %></li>
+      <% end %>
+
+      <% if logged_in? %>
+        <li class="sessionSmall">Hi, <%= current_admin.username %></li>
+        <form class="" action="/sessions/<%= current_admin.id %>" method="post">
+          <input type="hidden" value="delete" name="_method">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <button class="sessionSmall sessionBtn">Log out</button>
+        </form>
+
+        <% end %>
+    </ul>
+  </div>
+
+
+  <%= yield %>
+
+
 </body>
 </html>
