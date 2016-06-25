@@ -1,8 +1,9 @@
 // Fonts
 
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Mono);
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Scope+One');
 $robotoMono: 'Roboto Mono', ;
 $robotoSlab: 'Roboto Slab', serif;
+$serif: 'Scope One', serif;
 
 // Colours
 
@@ -17,5 +18,3 @@ $solidBackground: rgba(208,215,214, 1);
 .highlight-text {
   color: $highlight;
 }
-
-// Mixins
