@@ -130,10 +130,13 @@ body {
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222;
-  width: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
  }
+
+.wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
